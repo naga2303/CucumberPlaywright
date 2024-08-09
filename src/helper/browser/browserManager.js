@@ -1,11 +1,11 @@
-const {LaunchOptions, chromium, firefox, webkit } = require('@playwright/test')
+const { chromium, firefox, webkit } = require('@playwright/test')
 
-const options=LaunchOptions = {
+const options = {
     headless : !true
 }
 
-export const invokeBrowser = ()=>{
-    const browserType = process.env.npm_config_Browser || "chrome";
+const invokeBrowser = ()=>{
+    const browserType = process.env.BROWSER || "chrome";
     switch (browserType) {
         case "chrome":
             return chromium.launch(options);
@@ -17,3 +17,7 @@ export const invokeBrowser = ()=>{
             throw new Error("Please set the proper browser!")
     }
 }
+
+module.exports = {
+    invokeBrowser
+};

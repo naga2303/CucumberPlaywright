@@ -1,6 +1,7 @@
-export {};
+export const config ={
+    Browser: process.env.BROWSER || "chrome",
+    ENV:process.env.ENV || "test",
+    BASEURL: process.env.BASEURL || "localhost:8080",
+    HEAD: process.env.HEAD || "false"
 
-globalThis.BROWSER = process.env.BROWSER || 'chrome';
-globalThis.ENV = process.env.ENV || 'staging';
-globalThis.BASEURL = process.env.BASEURL || '';
-globalThis.HEAD = process.env.HEAD || 'false';
+}

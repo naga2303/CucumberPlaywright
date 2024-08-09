@@ -1,5 +1,4 @@
-//import { Given, When, Then } from "@cucumber/cucumber"
-//import {chromium,Page, Browser,expect} from "@playwright/test"
+
 const {Given, When, Then} = require('@cucumber/cucumber');
 const {chromium,Page, Browser, expect} = require('@playwright/test');
 const {pageFixture} = require('../../hooks/pageFixture');
@@ -7,7 +6,9 @@ const {pageFixture} = require('../../hooks/pageFixture');
   Given('User navigates to the application', async function () {
     // Write code here that turns the phrase above into concrete actions
        
-        await pageFixture.page.goto("http://leaftaps.com/opentaps/control/main");
+    console.log('BASEURL:', process.env.BASEURL);
+
+        await pageFixture.page.goto(process.env.BASEURL);
   });
 
 

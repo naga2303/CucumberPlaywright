@@ -3,12 +3,16 @@ const {chromium, Browser, Page} = require('@playwright/test')
 const {pageFixture} = require('./pageFixture');
 const path = require('path');
 const { type } = require('os');
+const { invokeBrowser } = require('../helper/browser/browserManager');
+const { getEnv } = require('../helper/env/env');
 let browser;
 let page;
 let context;
 
 BeforeAll(async function  () {
-    browser = await chromium.launch({headless:false})
+    getEnv();
+    console.log("in hooks")
+    browser = await invokeBrowser();
     
     
 })

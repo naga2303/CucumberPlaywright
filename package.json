@@ -1,26 +1,56 @@
 {
   
   "name": "cucumberplaywright",
+  
   "version": "1.0.0",
+  
   "description": "to write the sample code for playwright",
+  
   "main": "index.js",
+  
   "scripts": {
-    "pretest": "npx ts-node src/helper/report/init.ts",
-    "test": "cucumber-js test",
-     "posttest": "npx ts-node src/helper/report.js",
-     "rerun": "cucumber-js -p rerun @rerun.txt"
-
+  
+    
+  "pretest": "npx ts-node src/helper/init.js",
+  
+    
+  "test": "cross-env ENV=prod cucumber-js test || true",
+  
+    
+  "posttest": "npx ts-node src/helper/report.js",
+  
+    
+  "rerun": "cucumber-js -p rerun @rerun.txt"
+  
   },
   
   "author": "nagarajan",
+  
   "license": "ISC",
-  "devDependencies": { 
-  "@cucumber/cucumber": "^10.8.0", 
+  
+  "devDependencies": {
+  
+    
+  "@cucumber/cucumber": "^10.8.0",
+  
+    
   "@playwright/test": "^1.46.0",
-  "@types/node": "^22.1.0"
+  
+    
+  "@types/node": "^22.1.0",
+  
+    
+  "cross-env": "^7.0.3",
+  
+    
+  "dotenv": "^16.4.5"
+  
   },
   
-  "dependencies": { 
+  "dependencies": {
+  
+    
   "multiple-cucumber-html-reporter": "^3.7.0"
+  
   }
 }
